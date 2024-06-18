@@ -24,6 +24,7 @@ class SealedStatusExPageState extends State<SealedStatusExPage> {
   @override
   Widget build(BuildContext context) {
     final status = this.status;
+    final devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
 
     return Scaffold(
       appBar: AppBar(
@@ -50,7 +51,25 @@ class SealedStatusExPageState extends State<SealedStatusExPage> {
                       return Text('${data.key}: ${data.value}', textAlign: TextAlign.start,);
                     },)
                   else if(status case ErrorState())
-                      Text(status.content, textAlign: TextAlign.center,),
+                      Padding(
+                        padding: EdgeInsets.only(top: 8*devicePixelRatio),
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.error_outline,
+                              size: 24*devicePixelRatio,
+                            ),
+                            const SizedBox(height: 15,),
+                            Text(
+                              status.content,
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontSize: 6*devicePixelRatio,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
                 ],
               ),
             )),
