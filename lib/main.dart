@@ -42,13 +42,15 @@ class _MyHomePageState extends State<MyHomePage> {
         padding: const EdgeInsets.all(15),
         child: Wrap(
           spacing: 15,
-          runSpacing: double.maxFinite,
           children: [
-            FilledButton(
-              onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SealedStatusExPage(),),);
-              },
-              child: const Text('Sealed class example'),
+            SizedBox(
+              width: double.maxFinite,
+              child: FilledButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SealedStatusExPage(),),);
+                },
+                child: const Text('Sealed class example'),
+              ),
             ),
           ],
         ),
