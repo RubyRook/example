@@ -1,7 +1,4 @@
-import 'package:dio/dio.dart';
-import 'package:example/utils/sealed/status.dart';
 import 'package:flutter/material.dart';
-
 import 'features/sealed_example/sealed_status.dart';
 
 void main() {
